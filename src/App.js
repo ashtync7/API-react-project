@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Axios from 'axios';
 import md5 from 'md5'
-
-
+import { Switch, Route } from 'react-router-dom'
 import api from 'marvel-api'
+import StarWars from './Components/StarWars'
+import SaintSeiya from './Components/SaintSeiya'
+import HarryPotter from './Components/HarryPotter'
+import DD5e from './Components/DD5e'
+import Marvel from './Components/Marvel'
+import Home from './Components/Home'
 
 const marvel = api.createClient({
   publicKey: process.env.REACT_APP_MARVELKEY
@@ -19,7 +24,7 @@ const marvel = api.createClient({
 function App() {
   console.log(process.env)
   const getDD = async () => {
-    let DDres = await Axios.get('https://www.dnd5eapi.co/api/')
+    let DDres = await Axios.get('https://www.dnd5eapi.co/api/spells')
     console.log(DDres)
   }
 
@@ -28,10 +33,16 @@ function App() {
     console.log(SWres)
   }
 
-  const getPotter = async () => {
-    let HPres = await Axios.get("https://www.potterapi.com/v1/characters?key=$2a$10$AkgCGEKIUDVqXQ.rjYiMgu3kTgjm4QVSxU9zz188JXV7VPWSZaiOW")
-    console.log(HPres)
-  }
+  let [hpChar, setHpChar] = useState([]);
+  useEffect(() => {
+
+    const getPotter = async () => {
+      let HPres = await Axios.get("https://www.potterapi.com/v1/characters?key=$2a$10$AkgCGEKIUDVqXQ.rjYiMgu3kTgjm4QVSxU9zz188JXV7VPWSZaiOW")
+      console.log(HPres.data)
+      setHpChar(HPres.data)
+    }
+    getPotter()
+  }, [])
 
   const getSeiya = async () => {
     let SeiyaRes = await Axios.get('https://saint-seiya-api.herokuapp.com/api/characters')
@@ -53,26 +64,20 @@ function App() {
   }
   marvelAgain()
   getSeiya()
-  getPotter()
   getSWAPI()
   getDD()
   getMarvel()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <h1>Welcome to Geekworld</h1>
+      <Switch>
+        <Route path="/Home" render={(props) => <Home />}></Route>
+        <Route path="/StarWars" render={(props) => <StarWars />}></Route>
+        <Route path="/SaintSeiya" render={(props) => <SaintSeiya />}></Route>
+        <Route path="/HarryPotter" render={(props) => <HarryPotter hpChar={hpChar} {...props} />}></Route>
+        <Route path="/DD5e" render={(props) => <DD5e />}></Route>
+        <Route path="/Marvel" render={(props) => <Marvel />}></Route>
+      </Switch>
     </div>
   );
 }
