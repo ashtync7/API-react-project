@@ -11,6 +11,7 @@ import HarryPotter from './Components/HarryPotter'
 import DD5e from './Components/DD5e'
 import Marvel from './Components/Marvel'
 import Home from './Components/Home'
+import DDproperty from './Components/DDproperty'
 
 const marvel = api.createClient({
   publicKey: process.env.REACT_APP_MARVELKEY
@@ -22,11 +23,11 @@ const marvel = api.createClient({
 // developer.marvel.com
 
 function App() {
-  console.log(process.env)
-  const getDD = async () => {
-    let DDres = await Axios.get('https://www.dnd5eapi.co/api/spells')
-    console.log(DDres)
-  }
+  // console.log(process.env)
+  // const getDD = async () => {
+  //   let DDres = await Axios.get('https://www.dnd5eapi.co/api/')
+  //   console.log(DDres)
+  // }
 
   const getSWAPI = async () => {
     let SWres = await Axios.get('https://swapi.dev/api/')
@@ -65,7 +66,7 @@ function App() {
   marvelAgain()
   getSeiya()
   getSWAPI()
-  getDD()
+
   getMarvel()
   return (
     <div >
@@ -75,7 +76,8 @@ function App() {
         <Route path="/StarWars" render={(props) => <StarWars />}></Route>
         <Route path="/SaintSeiya" render={(props) => <SaintSeiya />}></Route>
         <Route path="/HarryPotter" render={(props) => <HarryPotter hpChar={hpChar} {...props} />}></Route>
-        <Route path="/DD5e" render={(props) => <DD5e />}></Route>
+        <Route exact path="/DD5e" render={(props) => <DD5e />}></Route>
+        <Route exact path="/DD5e/:property" render={(props) => <DDproperty {...props} />}></Route>
         <Route path="/Marvel" render={(props) => <Marvel />}></Route>
       </Switch>
     </div>
