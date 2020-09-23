@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
 
-function DD5e() {
-
+function DDproperty(props) {
 
     let [ddLinks, setDDlinks] = useState([])
     useEffect(() => {
         const getDD = async () => {
-            let DDres = await Axios.get('https://www.dnd5eapi.co/api/')
+            let DDres = await Axios.get(`https://www.dnd5eapi.co/api/${props.match.params.property}`)
             console.log(DDres)
-            setDDlinks(Object.keys(DDres.data))
+            setDDlinks(DDres.data.results)
         }
         getDD();
 
@@ -19,7 +18,7 @@ function DD5e() {
     const showDD = () => {
         let ddLinksList = ddLinks.map((eachLink) => {
             return (
-                <Link to={`/DD5e/${eachLink}`}>{eachLink}</Link>
+                <Link to={`/DD5e/${props.match.params.property}/${eachLink.name}`}>{eachLink.name}</Link>
             )
         })
         return (ddLinksList)
@@ -38,5 +37,4 @@ function DD5e() {
     )
 }
 
-
-export default DD5e
+export default DDproperty;
