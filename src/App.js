@@ -12,6 +12,7 @@ import DD5e from './Components/DD5e'
 import Marvel from './Components/Marvel'
 import Home from './Components/Home'
 import DDproperty from './Components/DDproperty'
+import DDchild from './Components/DDchild'
 
 const marvel = api.createClient({
   publicKey: process.env.REACT_APP_MARVELKEY
@@ -78,6 +79,7 @@ function App() {
         <Route path="/HarryPotter" render={(props) => <HarryPotter hpChar={hpChar} {...props} />}></Route>
         <Route exact path="/DD5e" render={(props) => <DD5e />}></Route>
         <Route exact path="/DD5e/:property" render={(props) => <DDproperty {...props} />}></Route>
+        <Route exact path="/DD5e/:property/:child" render={(props) => <DDchild {...props} />}></Route>
         <Route path="/Marvel" render={(props) => <Marvel />}></Route>
       </Switch>
     </div>
