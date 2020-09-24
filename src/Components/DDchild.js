@@ -9,7 +9,7 @@ function DDchild(props) {
     useEffect(() => {
         const getDD = async () => {
             let DDres = await Axios.get(`https://www.dnd5eapi.co/api/${props.match.params.property}/${props.match.params.child}`)
-            console.log(DDres)
+            console.log(DDres.data)
             setDDData(DDres.data)
             console.log(ddData)
         }
@@ -17,20 +17,65 @@ function DDchild(props) {
 
     }, [])
 
+    // // let [prof, setProf] = useState([])
 
+    function getProf() {
+        return ddData.proficiencies?.map((eachProf) => {
+            return (
+                <div>
+                    <ul>
+                        <li>{eachProf.proficiency.name}</li>
+                        <li>Bonus: {eachProf.value}</li>
+                    </ul>
+                </div>
+            )
+        })
+    }
+
+    const showData = () => {
+        let stuff = []
+        for (let key in ddData) {
+            if (key != "url" && key != "index") {
+                if (typeof ddData[key] !== "object") {
+
+                    stuff.push(<li>{key} : {JSON.stringify(ddData[key])}</li>)
+                } else {
+                    for (let key2 in ddData[key]) {
+                        stuff.push(<li>sub: {key2}: {JSON.stringify(ddData[key][key2])}</li>)
+                    }
+                }
+            }
+
+        }
+        console.log(stuff)
+        return stuff
+    }
 
     return (
         <div>
-            DM Says:
-            "The thirsty, rabbid goblin swings his rusty shortsword at you"
-
-            *Rolls a nat 20*
-
-            DM says: "uh.... you take 12 damage and you die. RIP."
-            {ddData.name}
-
-
+            {showData()}
+            {/* <h1>{ddData.name} {ddData.full_name}</h1>
+            <div>
+                {ddData.desc}
+                <p> {ddData.skills?.name}</p>
+            </div>
+            <div>
+                <p>{ddData.alignment}</p>
+                <p>Armor Class: {ddData.armor_class}</p>
+                <p>{ddData.challenge_rating}</p>
+                <p>{ddData.condition_immunities}</p>
+                <p>{ddData.damage_immunities}</p>
+                <p>{ddData.damage_vulnerabilities}</p>
+                <p>{ddData.hit_dice}</p>
+                <p>{ddData.hit_points}</p>
+                <p>{ddData.languages}</p>
+                {getProf()} */}
+            {/* <p>{ddData.proficiencies[0]?.proficiency.name}</p> */}
         </div>
+
+
+
+        // </div >
     )
 }
 
