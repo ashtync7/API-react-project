@@ -24,6 +24,13 @@ const marvel = api.createClient({
 // developer.marvel.com
 
 function App() {
+
+  // return (
+  // <button onClick={HPbutton} img??>
+  // {??}
+  //   </button >
+  // )
+
   // console.log(process.env)
   // const getDD = async () => {
   //   let DDres = await Axios.get('https://www.dnd5eapi.co/api/')
@@ -35,16 +42,16 @@ function App() {
     console.log(SWres)
   }
 
-  let [hpChar, setHpChar] = useState([]);
-  useEffect(() => {
+  // let [hpChar, setHpChar] = useState([]);
+  // useEffect(() => {
 
-    const getPotter = async () => {
-      let HPres = await Axios.get("https://www.potterapi.com/v1/characters?key=$2a$10$AkgCGEKIUDVqXQ.rjYiMgu3kTgjm4QVSxU9zz188JXV7VPWSZaiOW")
-      console.log(HPres.data)
-      setHpChar(HPres.data)
-    }
-    getPotter()
-  }, [])
+  //   const getPotter = async () => {
+  //     let HPres = await Axios.get("https://www.potterapi.com/v1/characters?key=$2a$10$AkgCGEKIUDVqXQ.rjYiMgu3kTgjm4QVSxU9zz188JXV7VPWSZaiOW")
+  //     console.log(HPres.data)
+  //     setHpChar(HPres.data)
+  //   }
+  //   getPotter()
+  // }, [])
 
   const getSeiya = async () => {
     let SeiyaRes = await Axios.get('https://saint-seiya-api.herokuapp.com/api/characters')
@@ -76,7 +83,7 @@ function App() {
         <Route path="/Home" render={(props) => <Home />}></Route>
         <Route path="/StarWars" render={(props) => <StarWars />}></Route>
         <Route path="/SaintSeiya" render={(props) => <SaintSeiya />}></Route>
-        <Route path="/HarryPotter" render={(props) => <HarryPotter hpChar={hpChar} {...props} />}></Route>
+        <Route path="/HarryPotter" render={(props) => <HarryPotter />}></Route>
         <Route exact path="/DD5e" render={(props) => <DD5e />}></Route>
         <Route exact path="/DD5e/:property" render={(props) => <DDproperty {...props} />}></Route>
         <Route exact path="/DD5e/:property/:child" render={(props) => <DDchild {...props} />}></Route>
@@ -84,7 +91,7 @@ function App() {
       </Switch>
     </div>
   );
-}
 
+}
 
 export default App;
