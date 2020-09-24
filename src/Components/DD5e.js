@@ -19,7 +19,7 @@ function DD5e() {
     const showDD = () => {
         let ddLinksList = ddLinks.map((eachLink) => {
             return (
-                <Link to={`/DD5e/${eachLink}`}>{eachLink}</Link>
+                <Link to={`/DD5e/${eachLink}`}><li>{eachLink}</li></Link>
             )
         })
         return (ddLinksList)
