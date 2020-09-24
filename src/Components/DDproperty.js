@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
+import DDchild from './DDchild'
 
 function DDproperty(props) {
 
@@ -18,7 +20,7 @@ function DDproperty(props) {
     const showDD = () => {
         let ddLinksList = ddLinks.map((eachLink) => {
             return (
-                <Link to={`/DD5e/${props.match.params.property}/${eachLink.name}`}>{eachLink.name}</Link>
+                <Link to={`/DD5e/${props.match.params.property}/${eachLink.url.split('/').pop()}`}>{eachLink.name}</Link>
             )
         })
         return (ddLinksList)
@@ -33,6 +35,9 @@ function DDproperty(props) {
 
             DM says: "uh.... you take 12 damage and you die. RIP."
             {showDD()}
+            {/* <Switch>
+                <Route exact path="/DD5e/:property/:child" render={(props) => <DDchild ddChild={ddLinks} {...props} />}></Route>
+            </Switch> */}
         </div>
     )
 }
