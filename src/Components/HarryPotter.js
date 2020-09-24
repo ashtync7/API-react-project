@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
-// <form onSubmit={idk what to put here}>
-//     <input type="image" src={'/sortinghat'}></input>
-// </form >
-
-// OR <button onClick={message}> Press me to print a message! </button>
-
 
 function HarryPotter(props) {
     let [hpChar, setHpChar] = useState([]);
