@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
-// <form onSubmit={idk what to put here}>
-//     <input type="image" src={'/sortinghat'}></input>
-// </form >
-
-// OR <button onClick={message}> Press me to print a message! </button>
-
 
 function HarryPotter(props) {
     let [hpChar, setHpChar] = useState([]);
@@ -29,17 +23,20 @@ function HarryPotter(props) {
     return (
 
         <div>
-            <img onClick={getPotter} src="./sortinghat.png" />
-            {random?.name},
-            {random?.school ? random?.school : 'school unknown'},
-            {random?.house ? random?.house : 'no house'},
-            {random?.patronus ? random?.patronus : 'unkown patronus'},
-            {random?.species},
-            {random?.bloodStatus ? random?.bloodStatus : 'blood status unknown'},
-            {random?.role ? random?.role : 'role unknown'},
-            {random?.alias ? random?.alias : 'no known alias'},
-            {random?.wand ? random?.wand : 'wand unknown'}
-        </div>
+            <img onClick={getPotter} src="./hathat.png" id="hathat" />
+
+            <div id="YerAwizard">
+                <p>{random?.name}</p>
+                <p>{random?.school ? random?.school : 'school unknown'}</p>
+                <p>{random?.house ? random?.house : 'no house'}</p>
+                <p>{random?.patronus ? random?.patronus : 'unkown patronus'}</p>
+                <p>{random?.species}</p>
+                <p>{random?.bloodStatus ? random?.bloodStatus : 'blood status unknown'}</p>
+                <p>{random?.role ? random?.role : 'role unknown'}</p>
+                <p>{random?.alias ? random?.alias : 'no known alias'}</p>
+                <p>{random?.wand ? random?.wand : 'wand unknown'}</p>
+            </div >
+        </div >
     )
     // let hpChar = props.hpChar.map((eachChar) => {
     //     return (
