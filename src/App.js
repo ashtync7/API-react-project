@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Axios from 'axios';
-import md5 from 'md5'
-import { Switch, Route } from 'react-router-dom'
-import api from 'marvel-api'
-import StarWars from './Components/StarWars'
-import Star2 from './Components/Star2'
-import SaintSeiya from './Components/SaintSeiya'
-import HarryPotter from './Components/HarryPotter'
-import DD5e from './Components/DD5e'
-import Marvel from './Components/Marvel'
-import Home from './Components/Home'
-import DDproperty from './Components/DDproperty'
-import DDchild from './Components/DDchild'
-import StarWars2 from './Components/Star2'
+import md5 from 'md5';
+import { Switch, Route } from 'react-router-dom';
+import api from 'marvel-api';
+import StarWars from './Components/StarWars';
+import Star2 from './Components/Star2';
+import SaintSeiya from './Components/SaintSeiya';
+import HarryPotter from './Components/HarryPotter';
+import DD5e from './Components/DD5e';
+import Marvel from './Components/Marvel';
+import Home from './Components/Home';
+import DDproperty from './Components/DDproperty';
+import DDchild from './Components/DDchild';
+import StarWars2 from './Components/Star2';
 
 
 const marvel = api.createClient({
@@ -49,6 +49,14 @@ function App() {
     //let res = await marvel.creators.findByName('Pat', 'Lee', '(X-Men/FF)')
     console.log(Mres)
   }
+  console.log(marvel)
+
+  const marvelCheck = async () => {
+    let marvelSomething = await marvel.characters.findByName()
+    console.log(marvelSomething)
+  }
+
+  marvelCheck()
 
   const marvelAgain = async () => {
     let ts = new Date()
@@ -62,7 +70,7 @@ function App() {
   getMarvel()
   return (
     <div >
-      <h1>Welcome to Geekworld</h1>
+      <h1>something cooler than welcome to geekworld</h1>
       <Switch>
         <Route path="/Home" render={(props) => <Home />}></Route>
         <Route path="/StarWars" render={(props) => <StarWars />}></Route>
