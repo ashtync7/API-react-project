@@ -14,6 +14,7 @@ import Marvel from './Components/Marvel'
 import Home from './Components/Home'
 import DDproperty from './Components/DDproperty'
 import DDchild from './Components/DDchild'
+import StarWars2 from './Components/Star2'
 
 
 const marvel = api.createClient({
