@@ -6,6 +6,7 @@ import md5 from 'md5'
 import { Switch, Route } from 'react-router-dom'
 import api from 'marvel-api'
 import StarWars from './Components/StarWars'
+import Star2 from './Components/Star2'
 import SaintSeiya from './Components/SaintSeiya'
 import HarryPotter from './Components/HarryPotter'
 import DD5e from './Components/DD5e'
@@ -13,6 +14,7 @@ import Marvel from './Components/Marvel'
 import Home from './Components/Home'
 import DDproperty from './Components/DDproperty'
 import DDchild from './Components/DDchild'
+
 
 const marvel = api.createClient({
   publicKey: process.env.REACT_APP_MARVELKEY
@@ -25,33 +27,14 @@ const marvel = api.createClient({
 
 function App() {
 
-  // return (
-  // <button onClick={HPbutton} img??>
-  // {??}
-  //   </button >
-  // )
 
-  // console.log(process.env)
-  // const getDD = async () => {
-  //   let DDres = await Axios.get('https://www.dnd5eapi.co/api/')
-  //   console.log(DDres)
+
+  // const getSWAPI = async () => {
+  //   let SWres = await Axios.get('https://swapi.dev/api/')
+  //   console.log(SWres)
   // }
 
-  const getSWAPI = async () => {
-    let SWres = await Axios.get('https://swapi.dev/api/')
-    console.log(SWres)
-  }
 
-  // let [hpChar, setHpChar] = useState([]);
-  // useEffect(() => {
-
-  //   const getPotter = async () => {
-  //     let HPres = await Axios.get("https://www.potterapi.com/v1/characters?key=$2a$10$AkgCGEKIUDVqXQ.rjYiMgu3kTgjm4QVSxU9zz188JXV7VPWSZaiOW")
-  //     console.log(HPres.data)
-  //     setHpChar(HPres.data)
-  //   }
-  //   getPotter()
-  // }, [])
 
   const getSeiya = async () => {
     let SeiyaRes = await Axios.get('https://saint-seiya-api.herokuapp.com/api/characters')
@@ -73,7 +56,7 @@ function App() {
   }
   marvelAgain()
   getSeiya()
-  getSWAPI()
+  // getSWAPI()
 
   getMarvel()
   return (
@@ -82,6 +65,7 @@ function App() {
       <Switch>
         <Route path="/Home" render={(props) => <Home />}></Route>
         <Route path="/StarWars" render={(props) => <StarWars />}></Route>
+        <Route path="/StarWars/:subpage" render={(props) => <Star2 />}></Route>
         <Route path="/SaintSeiya" render={(props) => <SaintSeiya />}></Route>
         <Route path="/HarryPotter" render={(props) => <HarryPotter />}></Route>
         <Route exact path="/DD5e" render={(props) => <DD5e />}></Route>
