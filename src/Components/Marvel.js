@@ -14,13 +14,18 @@ function Marvel() {
 
     return (
         <div id="panther">
+
             <header>
                 <img src="./BP.jpg" className="BPheader" />
             </header>
 
             <p id="BPtext">Dedicated to Chadwick Boseman // "Wakanda Forever" :'( </p>
 
-            <button>IN COMICS</button>
+
+            <button id="BPbuttons">IN COMICS</button>
+            <button id="BPbuttons">IDK</button>
+            <button id="BPbuttons">YUP</button>
+            <button id="BPbuttons">AND SO ON</button>
 
         </div>
     )
