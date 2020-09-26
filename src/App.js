@@ -17,6 +17,7 @@ import DDchild from './Components/DDchild';
 import StarWars2 from './Components/Star2';
 
 
+
 const marvel = api.createClient({
   publicKey: process.env.REACT_APP_MARVELKEY
   , privateKey: process.env.REACT_APP_PRIVKEY
@@ -37,10 +38,10 @@ function App() {
 
 
 
-  const getSeiya = async () => {
-    let SeiyaRes = await Axios.get('https://saint-seiya-api.herokuapp.com/api/characters')
-    console.log(SeiyaRes)
-  }
+  // const getSeiya = async () => {
+  //   let SeiyaRes = await Axios.get('https://saint-seiya-api.herokuapp.com/api/characters')
+  //   console.log(SeiyaRes)
+  // }
 
 
   const getMarvel = async () => {
@@ -64,18 +65,18 @@ function App() {
     console.log(res)
   }
   marvelAgain()
-  getSeiya()
+  // getSeiya()
   // getSWAPI()
 
   getMarvel()
   return (
     <div >
-      <h1>something cooler than welcome to geekworld</h1>
+      <h1>Nerdipedia</h1>
       <Switch>
         <Route path="/Home" render={(props) => <Home />}></Route>
         <Route path="/StarWars" render={(props) => <StarWars />}></Route>
         <Route path="/StarWars/:subpage" render={(props) => <Star2 />}></Route>
-        <Route path="/SaintSeiya" render={(props) => <SaintSeiya />}></Route>
+        <Route path="/SaintSeiya" render={(props) => <SaintSeiya {...props} />}></Route>
         <Route path="/HarryPotter" render={(props) => <HarryPotter />}></Route>
         <Route exact path="/DD5e" render={(props) => <DD5e />}></Route>
         <Route exact path="/DD5e/:property" render={(props) => <DDproperty {...props} />}></Route>
