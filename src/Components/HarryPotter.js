@@ -22,6 +22,11 @@ function HarryPotter(props) {
     return (
 
         <div>
+
+            <header>
+                <img src="./hpheader.png" className="hpheader" />
+            </header>
+
             <img onClick={getPotter} src="./hathat.png" id="hathat" />
 
             <div id="YerAwizard">

@@ -9,7 +9,7 @@ function Home() {
                     <Link to={`/DD5e`}>Dungeons & Dragons 5th Edition SRD</Link>
                 </li>
                 <li>
-                    <Link to={`/Marvel`}>Marvel Comics</Link>
+                    <Link to={`/Marvel`}>Wakanda</Link>
                 </li>
                 <li>
                     <Link to={`/SaintSeiya`}>Saint Seiya</Link>
