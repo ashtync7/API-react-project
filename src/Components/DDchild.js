@@ -6,6 +6,16 @@ import { Link } from 'react-router-dom'
 function DDchild(props) {
     console.log(props)
     let [ddData, setDDData] = useState({})
+
+    useEffect(() => {
+        const getImage = async () => {
+            let unsplashImg = await Axios.get(`https://api.unsplash.com/search/photos?query=dragon&client_id=ur67i-2L0rtMC3P-SxpENcEgB_vsWEaF1A2sMegpB6s`)
+            console.log(unsplashImg.data.results)
+        }
+        getImage()
+    })
+
+
     useEffect(() => {
         const getDD = async () => {
             let DDres = await Axios.get(`https://www.dnd5eapi.co/api/${props.match.params.property}/${props.match.params.child}`)
