@@ -71,7 +71,7 @@ function App() {
   getMarvel()
   return (
     <div >
-      <h1>Nerdipedia</h1>
+      <h1>Geek-o-pedia</h1>
       <Switch>
         <Route path="/Home" render={(props) => <Home />}></Route>
         <Route path="/StarWars" render={(props) => <StarWars />}></Route>
