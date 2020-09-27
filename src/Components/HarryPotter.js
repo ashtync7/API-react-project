@@ -23,23 +23,27 @@ function HarryPotter(props) {
 
         <div>
 
-            <header>
-                <img src="./hpheader.png" className="hpheader" />
-            </header>
+            {/* <Link to="/Home">
+                <img src="./HomeButton.png" alt="home-image" id="HomeButton"></img>
+            </Link> */}
 
-            <img onClick={getPotter} src="./hathat.png" id="hathat" />
+            <body className="hpheader">
+                {/* <img src="./hpheader.png" className="hpheader" /> */}
 
-            <div id="YerAwizard">
-                <p>{random?.name}</p>
-                <p>{random?.school ? random?.school : 'school unknown'}</p>
-                <p>{random?.house ? random?.house : 'no house'}</p>
-                <p>{random?.patronus ? random?.patronus : 'unkown patronus'}</p>
-                <p>{random?.species}</p>
-                <p>{random?.bloodStatus ? random?.bloodStatus : 'blood status unknown'}</p>
-                <p>{random?.role ? random?.role : 'role unknown'}</p>
-                <p>{random?.alias ? random?.alias : 'no known alias'}</p>
-                <p>{random?.wand ? random?.wand : 'wand unknown'}</p>
-            </div >
+                <img onClick={getPotter} src="./hathat.png" id="hathat" />
+
+                <div id="YerAwizard">
+                    <p>{random?.name}</p>
+                    <p>{random?.school ? random?.school : 'school unknown'}</p>
+                    <p>{random?.house ? random?.house : 'no house'}</p>
+                    <p>{random?.patronus ? random?.patronus : 'unkown patronus'}</p>
+                    <p>{random?.species}</p>
+                    <p>{random?.bloodStatus ? random?.bloodStatus : 'blood status unknown'}</p>
+                    <p>{random?.role ? random?.role : 'role unknown'}</p>
+                    <p>{random?.alias ? random?.alias : 'no known alias'}</p>
+                    <p>{random?.wand ? random?.wand : 'wand unknown'}</p>
+                </div >
+            </body>
         </div >
     )
     // let hpChar = props.hpChar.map((eachChar) => {

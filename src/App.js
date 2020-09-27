@@ -15,6 +15,7 @@ import Home from './Components/Home';
 import DDproperty from './Components/DDproperty';
 import DDchild from './Components/DDchild';
 import StarWars2 from './Components/Star2';
+import { Link } from 'react-router-dom'
 
 
 
@@ -65,13 +66,23 @@ function App() {
     console.log(res)
   }
   marvelAgain()
+
+  const marvelMore = async () => {
+    let ts = new Date()
+    let res = await Axios.get('http://gateway.marvel.com/v1/public/events?ts=${ts}&apikey=${process.env.REACT_APP_MARVELKEY}&hash=${md5(ts + process.env.REACT_APP_PRIVKEY + process.env.REACT_APP_MARVELKEY)}')
+    console.log(res)
+  }
+  marvelMore()
   // getSeiya()
   // getSWAPI()
 
   getMarvel()
   return (
     <div >
-      <h1>Geek-o-pedia</h1>
+      <h1>App Name</h1>
+      <Link to="/Home">
+        <img src="./HomeButton.png" alt="home-image" id="HomeButton"></img>
+      </Link>
       <Switch>
         <Route path="/Home" render={(props) => <Home />}></Route>
         <Route path="/StarWars" render={(props) => <StarWars />}></Route>

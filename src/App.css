@@ -136,12 +136,18 @@
 }
 
 .hpheader {
-  height: 770px;
-  width: 1100px;
+  background-image: url("./Components/hpwallpaper.jpg");
+  background-color: #cccccc;
+  height: 900px;
+  width: 1600px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  background-image: url(./hpheader.png);
-  position: 0 0;
+}
+
+#HomeButton {
+  height: 100px;
+  width: 120px;
+  justify-content: right;
+  
 }
