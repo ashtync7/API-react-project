@@ -141,4 +141,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  background-image: url(./hpheader.png);
+  position: 0 0;
 }
