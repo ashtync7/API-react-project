@@ -149,5 +149,13 @@
   height: 100px;
   width: 120px;
   justify-content: right;
-  
-}
+  }
+
+  #unis {
+    flex-direction: row;
+  }
+
+  #appname {
+    text-align: center;
+    text-transform: uppercase;
+  }
