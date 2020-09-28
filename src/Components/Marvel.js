@@ -10,6 +10,7 @@ function Marvel() {
 
     let [displayThing, setDisplayThing] = useState({ name: '' })
     let [display, setDisplay] = useState('')
+    console.log(displayThing)
     useEffect(() => {
 
 
@@ -62,7 +63,7 @@ function Marvel() {
     const showEvents = () => {
         let randomEvents = bpEvents[Math.floor(Math.random() * bpEvents.length)]
         console.log(randomEvents)
-
+        console.log(randomEvents.title)
         setDisplayThing(randomEvents)
         setDisplay('events')
 
@@ -71,6 +72,7 @@ function Marvel() {
     const showSeries = () => {
         let randomSeries = bpSeries[Math.floor(Math.random() * bpSeries.length)]
         console.log(randomSeries)
+        setDisplayThing(randomSeries)
         setDisplay('series')
 
     }
@@ -78,6 +80,7 @@ function Marvel() {
     const showStories = () => {
         let randomStories = bpStories[Math.floor(Math.random() * bpStories.length)]
         console.log(randomStories)
+        setDisplayThing(randomStories)
         setDisplay('stories')
 
     }
@@ -130,59 +133,49 @@ function Marvel() {
 
             <p id="BPtext">Dedicated to Chadwick Boseman // "Wakanda Forever" :'( </p>
 
+            <div className="divBtn">
+                <button onClick={showComics} id="BPbuttons">COMICS</button>
+                <button onClick={showEvents} id="BPbuttons">EVENTS</button>
+                <button onClick={showSeries} id="BPbuttons">SERIES</button>
+                <button onClick={showStories} id="BPbuttons">STORIES</button>
+            </div>
 
-            <button onClick={showComics} id="BPbuttons">COMICS</button>
-            <button onClick={showEvents} id="BPbuttons">EVENTS</button>
-            <button onClick={showSeries} id="BPbuttons">SERIES</button>
-            <button onClick={showStories} id="BPbuttons">STORIES</button>
+            <div id="jadarox">
+                {display == 'comics' ?
+                    <div>
+                        <h2>Comic Title: {displayThing.title}</h2>
+                        <img src={displayThing.images[0].path + '.' + displayThing.images[0].extension} />
 
-            {display == 'comics' ?
-                <div>
-                    <h2>Comic Title: {displayThing.title}</h2>
-                    <img src={displayThing.images[0].path} alt={displayThing.images[0].extension} />
+                        <p>Comic Id: {displayThing.id} </p>
+                        <p>Issue Number: {displayThing.issueNumber} </p>
+                        <p>Number of Pages: {displayThing.pageCount} </p>
+                        <p>Print Price: {displayThing.prices[0].price} </p>
+                        <p>Digital Purchase Price: {displayThing.prices[1]?.price ? displayThing.prices[1]?.price : 'unavailable'}</p>
+                        <p>UPC: {displayThing.upc} </p>
+                    </div> : null}
 
-                    <p>Comic Id: {displayThing.id} </p>
-                    <p>Issue Number: {displayThing.issueNumber} </p>
-                    <p>Number of Pages: {displayThing.pageCount} </p>
-                    <p>Print Price: {displayThing.prices[0].price} </p>
-                    <p>Digital Purchase Price: {displayThing.prices[1].price} </p>
-                    <p>UPC: {displayThing.upc} </p>
-                </div> : null}
-            {display == 'events' ?
-                <div>
-                    {/* <h2>Name: {displayThing.name}</h2>
-                    <p>Born on: {displayThing.birth_year} </p>
-                    <p>Eye color: {displayThing.eye_color} </p>
-                    <p>Gender: {displayThing.gender} </p>
-                    <p>Hair color: {displayThing.hair_color} </p>
-                    <p>Height: {displayThing.height} </p>
-                    <p>Weight: {displayThing.mass} </p>
-                    <p>Skin color: {displayThing.skin_color} </p> */}
-                </div> : null}
-            {display == 'series' ?
-                <div>
-                    {/* <h2>Name: {displayThing.name}</h2>
-                    <p>Born on: {displayThing.birth_year} </p>
-                    <p>Eye color: {displayThing.eye_color} </p>
-                    <p>Gender: {displayThing.gender} </p>
-                    <p>Hair color: {displayThing.hair_color} </p>
-                    <p>Height: {displayThing.height} </p>
-                    <p>Weight: {displayThing.mass} </p>
-                    <p>Skin color: {displayThing.skin_color} </p> */}
-                </div> : null}
-            {display == 'stories' ?
-                <div>
-                    {/* <h2>Name: {displayThing.name}</h2>
-                    <p>Born on: {displayThing.birth_year} </p>
-                    <p>Eye color: {displayThing.eye_color} </p>
-                    <p>Gender: {displayThing.gender} </p>
-                    <p>Hair color: {displayThing.hair_color} </p>
-                    <p>Height: {displayThing.height} </p>
-                    <p>Weight: {displayThing.mass} </p>
-                    <p>Skin color: {displayThing.skin_color} </p> */}
-                </div> : null}
+                {display == 'events' ?
+                    <div>
+                        <h2>{displayThing.title}</h2>
+                        <p>{displayThing.description} </p>
 
+                    </div> : null}
+
+                {display == 'series' ?
+                    <div>
+                        <h2>{displayThing.title}</h2>
+                        <p>{displayThing.rating} </p>
+                    </div> : null}
+
+                {display == 'stories' ?
+                    <div>
+                        <h2>{displayThing.title}</h2>
+                        <p>Modified: {displayThing.modified} </p>
+                        <p>{displayThing.description} </p>
+                    </div> : null}
+            </div>
         </div>
+
     )
 }
 
