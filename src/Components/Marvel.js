@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import md5 from 'md5';
+import ReactAudioPlayer from 'react-audio-player'
 
 function Marvel() {
     let [bpData, setBPData] = useState([])
@@ -173,6 +174,7 @@ function Marvel() {
                         <p>Modified: {displayThing.modified} </p>
                         <p>{displayThing.description} </p>
                     </div> : null}
+                <p><ReactAudioPlayer src="pbtheme.mp3" autoPlay /></p>
             </div>
         </div>
 

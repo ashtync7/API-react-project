@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import './saint.css'
+import ReactAudioPlayer from 'react-audio-player'
 import { Link } from 'react-router-dom'
 
 
@@ -13,9 +14,15 @@ function SaintSeiya(props) {
 
     async function saintLookUp(e) {
         console.log(e.target.value)
-        let res = await Axios.get(`https://saint-seiya-api.herokuapp.com/api/characters/search?q=${e.target.value}`)
-        console.log(res)
-        setSearchSaint(res.data)
+        let filteredSeiya = seiya.filter((eachOne) => {
+            console.log(eachOne)
+            return eachOne.name.toLowerCase().includes(e.target.value.toLowerCase())
+
+        })
+        setSearchSaint(filteredSeiya)
+        // let res = await Axios.get(`https://saint-seiya-api.herokuapp.com/api/characters/search?q=${e.target.value}`)
+        // console.log(res)
+        // setSearchSaint(res.data)
     }
 
     useEffect(() => {
@@ -31,7 +38,7 @@ function SaintSeiya(props) {
 
     const showSeiya = () => {
 
-        let SeiyaList = seiya.map((eachSaint) => {
+        let SeiyaList = searchSaint.map((eachSaint) => {
             return (
                 <div>
 
@@ -62,13 +69,14 @@ function SaintSeiya(props) {
         return (SeiyaList)
     }
     return (
-        <body className="background">
+        <body id='saintBody'>
 
             <div >
                 Pegasus Ryu sei Ken!!
             <input onChange={saintLookUp} type="text" name="search" />
 
                 <p>{showSeiya()}</p>
+                <p><ReactAudioPlayer src="saintSeiya.mp3" autoPlay /></p>
             </div>
         </body>
     )
