@@ -49,15 +49,61 @@ function Marvel() {
 
         marvelStories()
 
+        const showComics = () => {
+            let bpData = bpData[Math.floor(Math.random() * bpData.length)]
+            console.log(bpData)
+
+            // setDisplayThing(person)
+        }
+
+        const showEvents = () => {
+            let bpEvents = bpEvents[Math.floor(Math.random() * bpEvents.length)]
+            console.log(bpEvents)
+
+            setDisplayThing(bpEvents)
+
+        }
+
+        const showSeries = () => {
+            let bpSeries = bpSeries[Math.floor(Math.random() * bpSeries.length)]
+            console.log(bpSeries)
+
+        }
+
+        const showStories = () => {
+            let bpStories = bpStories[Math.floor(Math.random() * bpStories.length)]
+            console.log(bpStories)
+
+        }
+
     }, [])
 
-    const showEvents = () => {
-        let bpEvents = bpEvents[Math.floor(Math.random() * bpEvents.length)]
-        console.log(bpEvents)
+    // const showComics = () => {
+    //     let bpData = bpData[Math.floor(Math.random() * bpData.length)]
+    //     console.log(bpData)
 
-        setDisplayThing(bpEvents)
+    //     // setDisplayThing(person)
+    // }
 
-    }
+    // const showEvents = () => {
+    //     let bpEvents = bpEvents[Math.floor(Math.random() * bpEvents.length)]
+    //     console.log(bpEvents)
+
+    //     setDisplayThing(bpEvents)
+
+    // }
+
+    // const showSeries = () => {
+    //     let bpSeries = bpSeries[Math.floor(Math.random() * bpSeries.length)]
+    //     console.log(bpSeries)
+
+    // }
+
+    // const showStories = () => {
+    //     let bpStories = bpStories[Math.floor(Math.random() * bpStories.length)]
+    //     console.log(bpStories)
+
+    // }
 
 
     // let [blackPanther, setBlackPanther] = useState([]);
@@ -81,10 +127,10 @@ function Marvel() {
             <p id="BPtext">Dedicated to Chadwick Boseman // "Wakanda Forever" :'( </p>
 
 
-            <button id="BPbuttons">COMICS</button>
-            <button id="BPbuttons">EVENTS</button>
-            <button id="BPbuttons">SERIES</button>
-            <button id="BPbuttons">STORIES</button>
+            <button onClick={showComics} id="BPbuttons">COMICS</button>
+            <button onClick={showEvents} id="BPbuttons">EVENTS</button>
+            <button onClick={showSeries} id="BPbuttons">SERIES</button>
+            <button onClick={showStories} id="BPbuttons">STORIES</button>
 
         </div>
     )
