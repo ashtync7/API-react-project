@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import './dd.css'
 import { Switch, Route } from 'react-router-dom'
 import DDchild from './DDchild'
+import ReactAudioPlayer from 'react-audio-player'
 
 function DDproperty(props) {
 
@@ -31,6 +32,7 @@ function DDproperty(props) {
         <div>
 
             {showDD()}
+            <p><ReactAudioPlayer src="Soad.mp3" autoPlay /></p>
 
         </div>
     )

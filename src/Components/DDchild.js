@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import './dd.css'
 import { Link } from 'react-router-dom'
+import ReactAudioPlayer from 'react-audio-player'
 
 
 function DDchild(props) {
@@ -82,6 +83,7 @@ function DDchild(props) {
                 <p>{ddData.languages}</p>
                 {getProf()} */}
             {/* <p>{ddData.proficiencies[0]?.proficiency.name}</p> */}
+            <p><ReactAudioPlayer src="Soad.mp3" autoPlay /></p>
         </div>
 
 

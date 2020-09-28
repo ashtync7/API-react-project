@@ -3,6 +3,7 @@ import Axios from 'axios'
 import './star.css'
 import { Link } from 'react-router-dom'
 import { css } from "@emotion/core";
+import ReactAudioPlayer from 'react-audio-player'
 import FadeLoader from "react-spinners/FadeLoader";
 // import vader from 'public/star.jpg'
 // import 'src/Components/star.jpg'
@@ -108,7 +109,7 @@ function StarWars() {
     return (
         // style={{ backgroundImage: 'url(' + require('src/Components/star.jpg') + ')' }}
         // style={{ backgroundImage: 'url(' + require(vader) + ')' }}
-        <body className="background">
+        <body id='starBody'>
 
 
             <div >
@@ -197,7 +198,7 @@ function StarWars() {
                                 <p>Hyperdrive Rating: {displayThing.hyperdrive_rating}</p>
 
                             </div> : null}
-
+                        <p><ReactAudioPlayer src="imperial.mp3" autoPlay /></p>
                         <div>
 
 

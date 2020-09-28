@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
 import './dd.css'
+import ReactAudioPlayer from 'react-audio-player'
 
 function DD5e() {
 
@@ -35,6 +36,7 @@ function DD5e() {
 
             DM says: "uh.... you take 12 damage and you die. RIP."
             {showDD()}
+            <p><ReactAudioPlayer src="Soad.mp3" autoPlay /></p>
         </div>
     )
 }

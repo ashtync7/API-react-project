@@ -5,11 +5,19 @@
     color: white */
 /* } */
 
-.background {
-    background: black;
+#starBody {
+    background-image: url(/star.jpg);
+    background-repeat: no-repeat;
+    color: white;
+    width: 1600px;
+    height: 1000px
+}
+
+/* .background {
+
     color: white;
     background-image: url(/star.jpg);
-}
+} */
 
 @font-face {
     font-family: starWar;

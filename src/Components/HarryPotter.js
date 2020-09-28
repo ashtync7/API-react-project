@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactAudioPlayer from 'react-audio-player';
 import Axios from 'axios';
 
 
@@ -42,6 +43,7 @@ function HarryPotter(props) {
                     <p>{random?.role ? random?.role : 'role unknown'}</p>
                     <p>{random?.alias ? random?.alias : 'no known alias'}</p>
                     <p>{random?.wand ? random?.wand : 'wand unknown'}</p>
+                    <p><ReactAudioPlayer src="harrypotter.mp3" autoPlay /></p>
                 </div >
             </body>
         </div >
