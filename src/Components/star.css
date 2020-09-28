@@ -1,0 +1,24 @@
+/* * {
+    background: black;
+    color: white
+        /* background-image: url(/star.jpg);
+    color: white */
+/* } */
+
+.background {
+    background: black;
+    color: white;
+    background-image: url(/star.jpg);
+}
+
+@font-face {
+    font-family: starWar;
+    src: url(/STARWARS.woff)
+}
+
+
+.swTitle {
+    font-family: starWar;
+    font-size: 25px;
+    color: yellow;
+}

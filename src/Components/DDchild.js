@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
+import './dd.css'
 import { Link } from 'react-router-dom'
 
 
@@ -48,10 +49,10 @@ function DDchild(props) {
             if (key != "url" && key != "index") {
                 if (typeof ddData[key] !== "object") {
 
-                    stuff.push(<li>{key} : {JSON.stringify(ddData[key])}</li>)
+                    stuff.push(<p>{key} : {JSON.stringify(ddData[key]).replace(/\"/g, "")}</p>)
                 } else {
                     for (let key2 in ddData[key]) {
-                        stuff.push(<li>sub: {key2}: {JSON.stringify(ddData[key][key2])}</li>)
+                        stuff.push(<p>{key2}: {JSON.stringify(ddData[key][key2]).replace(/\"/g, "")}</p>)
                     }
                 }
             }
