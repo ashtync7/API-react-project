@@ -78,23 +78,25 @@ function App() {
 
   getMarvel()
   return (
-    <div >
-      <h1 id="appname">Nerdville</h1>
-      <Link to="/">
-        <img src="./HomeButton.png" alt="home-image" id="HomeButton"></img>
-      </Link>
-      <Switch>
-        <Route exact path="/" render={(props) => <Home />}></Route>
-        <Route path="/StarWars" render={(props) => <StarWars />}></Route>
-        <Route path="/StarWars/:subpage" render={(props) => <Star2 />}></Route>
-        <Route path="/SaintSeiya" render={(props) => <SaintSeiya {...props} />}></Route>
-        <Route path="/HarryPotter" render={(props) => <HarryPotter />}></Route>
-        <Route exact path="/DD5e" render={(props) => <DD5e />}></Route>
-        <Route exact path="/DD5e/:property" render={(props) => <DDproperty {...props} />}></Route>
-        <Route exact path="/DD5e/:property/:child" render={(props) => <DDchild {...props} />}></Route>
-        <Route path="/Marvel" render={(props) => <Marvel />}></Route>
-      </Switch>
-    </div>
+    <body>
+      <div >
+        <h1 id="appname">Nerdville</h1>
+        <Link to="/">
+          <img src="./HomeButton.png" alt="home-image" id="HomeButton"></img>
+        </Link>
+        <Switch>
+          <Route exact path="/" render={(props) => <Home />}></Route>
+          <Route path="/StarWars" render={(props) => <StarWars />}></Route>
+          <Route path="/StarWars/:subpage" render={(props) => <Star2 />}></Route>
+          <Route path="/SaintSeiya" render={(props) => <SaintSeiya {...props} />}></Route>
+          <Route path="/HarryPotter" render={(props) => <HarryPotter />}></Route>
+          <Route exact path="/DD5e" render={(props) => <DD5e />}></Route>
+          <Route exact path="/DD5e/:property" render={(props) => <DDproperty {...props} />}></Route>
+          <Route exact path="/DD5e/:property/:child" render={(props) => <DDchild {...props} />}></Route>
+          <Route path="/Marvel" render={(props) => <Marvel />}></Route>
+        </Switch>
+      </div>
+    </body>
   );
 
 }
