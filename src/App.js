@@ -62,14 +62,14 @@ function App() {
 
   const marvelAgain = async () => {
     let ts = new Date()
-    let res = await Axios.get(`http://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${process.env.REACT_APP_MARVELKEY}&hash=${md5(ts + process.env.REACT_APP_PRIVKEY + process.env.REACT_APP_MARVELKEY)}`)
+    let res = await Axios.get(`https://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${process.env.REACT_APP_MARVELKEY}&hash=${md5(ts + process.env.REACT_APP_PRIVKEY + process.env.REACT_APP_MARVELKEY)}`)
     console.log(res)
   }
   marvelAgain()
 
   const marvelMore = async () => {
     let ts = new Date()
-    let res = await Axios.get('http://gateway.marvel.com/v1/public/events?ts=${ts}&apikey=${process.env.REACT_APP_MARVELKEY}&hash=${md5(ts + process.env.REACT_APP_PRIVKEY + process.env.REACT_APP_MARVELKEY)}')
+    let res = await Axios.get('https://gateway.marvel.com/v1/public/events?ts=${ts}&apikey=${process.env.REACT_APP_MARVELKEY}&hash=${md5(ts + process.env.REACT_APP_PRIVKEY + process.env.REACT_APP_MARVELKEY)}')
     console.log(res)
   }
   marvelMore()
