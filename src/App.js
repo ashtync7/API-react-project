@@ -80,11 +80,11 @@ function App() {
   return (
     <div >
       <h1 id="appname">Nerdville</h1>
-      <Link to="/Home">
+      <Link to="/">
         <img src="./HomeButton.png" alt="home-image" id="HomeButton"></img>
       </Link>
       <Switch>
-        <Route path="/Home" render={(props) => <Home />}></Route>
+        <Route exact path="/" render={(props) => <Home />}></Route>
         <Route path="/StarWars" render={(props) => <StarWars />}></Route>
         <Route path="/StarWars/:subpage" render={(props) => <Star2 />}></Route>
         <Route path="/SaintSeiya" render={(props) => <SaintSeiya {...props} />}></Route>

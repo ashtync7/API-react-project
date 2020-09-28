@@ -8,5 +8,6 @@ img {
     background-image: url(/ssbg.jpg);
     color: white;
     width: 1800px;
-    height: 1200px
+    height: 1200px;
+    background-color: transparent !important;
 }
