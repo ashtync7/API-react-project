@@ -69,10 +69,17 @@
 
 #panther {
   background-color: black;
+  color: white;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
 }
 
 #BPtext {
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #BPbuttons {
@@ -86,6 +93,19 @@
   cursor: pointer;
   position: relative;
   z-index: 0;
+  
+}
+.divBtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#jadarox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 #BPbuttons:before {
@@ -143,13 +163,17 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10%;
 }
 
 #HomeButton {
   height: 100px;
   width: 120px;
-  justify-content: right;
-  }
+  margin-bottom: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
   #unis {
     flex-direction: row;
@@ -158,4 +182,7 @@
   #appname {
     text-align: center;
     text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 0%;
   }
+
