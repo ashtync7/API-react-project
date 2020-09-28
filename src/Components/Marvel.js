@@ -25,8 +25,8 @@ function Marvel() {
         const marvelMore = async () => {
             let ts = new Date()
             let res = await Axios.get(`http://gateway.marvel.com/v1/public/characters/1009187/events?ts=${ts}&apikey=${process.env.REACT_APP_MARVELKEY}&hash=${md5(ts + process.env.REACT_APP_PRIVKEY + process.env.REACT_APP_MARVELKEY)}`)
-            console.log(res)
-            setBPEvents(res)
+            console.log(res.data.data.results)
+            setBPEvents(res.data.data.results)
         }
 
         marvelMore()
@@ -34,8 +34,8 @@ function Marvel() {
         const marvelSeries = async () => {
             let ts = new Date()
             let res = await Axios.get(`http://gateway.marvel.com/v1/public/characters/1009187/series?ts=${ts}&apikey=${process.env.REACT_APP_MARVELKEY}&hash=${md5(ts + process.env.REACT_APP_PRIVKEY + process.env.REACT_APP_MARVELKEY)}`)
-            console.log(res)
-            setBPSeries(res)
+            console.log(res.data.data.results)
+            setBPSeries(res.data.data.results)
         }
 
         marvelSeries()
@@ -43,8 +43,8 @@ function Marvel() {
         const marvelStories = async () => {
             let ts = new Date()
             let res = await Axios.get(`http://gateway.marvel.com/v1/public/characters/1009187/stories?ts=${ts}&apikey=${process.env.REACT_APP_MARVELKEY}&hash=${md5(ts + process.env.REACT_APP_PRIVKEY + process.env.REACT_APP_MARVELKEY)}`)
-            console.log(res)
-            setBPStories(res)
+            console.log(res.data.data.results)
+            setBPStories(res.data.data.results)
         }
 
         marvelStories()
