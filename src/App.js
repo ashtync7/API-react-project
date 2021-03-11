@@ -79,7 +79,7 @@ function App() {
   getMarvel()
   return (
     <div >
-      <h1 id="appname">Nerdville</h1>
+      {/* <h1 id="appname">Nerdville</h1> */}
       <Link to="/Home">
         <img src="./HomeButton.png" alt="home-image" id="HomeButton"></img>
       </Link>

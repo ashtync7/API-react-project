@@ -186,3 +186,16 @@
     margin-bottom: 0%;
   }
 
+  .homeroom {
+    background-color: #000;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+  }
+
+  .canva {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: baseline;
+  }
