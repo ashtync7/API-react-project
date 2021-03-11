@@ -203,3 +203,10 @@ body {
   font-size: 50px;
   margin-bottom: 0%;
 }
+
+.homeroom {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
