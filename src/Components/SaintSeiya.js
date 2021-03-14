@@ -71,7 +71,7 @@ function SaintSeiya(props) {
     return (
         <body id='saintBody'>
 
-            <div >
+            <div className="whoknows">
                 Pegasus Ryu sei Ken!!
             <input onChange={saintLookUp} type="text" name="search" />
 
